@@ -54,24 +54,15 @@ With this, we will validate that everything is working correctly.
 
 To assess test coverage:
 
-1. **Install LCOV:**
+1. **Generate Coverage Data:**
 ```bash
-brew install lcov
-```
-
-2. **Generate Coverage Data:**
-```bash
-flutter test --coverage
+npm run test:cov 
 ```
 
 3. **Generate HTML Reports:**
 ```bash
-genhtml coverage/lcov.info -o coverage/html
-```
-
-4. **View Coverage Reports:**
-```bash
-open coverage/html/index.html
+cd test
+npx serve coverage/
 ```
 
 ---
@@ -127,3 +118,7 @@ To generate the distributed version, execute the following command:
 ```bash
 npm run build
 ```
+
+## Postman Documentation
+
+https://documenter.getpostman.com/view/35020357/2sAYJ6DfWz
