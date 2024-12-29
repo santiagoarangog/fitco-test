@@ -3,7 +3,6 @@ import { AuthService } from './auth.service';
 import { AuthRepository } from './auth.repository';
 import { UserRepository } from '../user/user.repository';
 import { JwtService } from '@nestjs/jwt';
-import { EmailUtil } from '../utils/email.utils';
 import { ConfigUtil } from '../utils/config.utils';
 import { HttpStatus } from '@nestjs/common';
 
@@ -16,7 +15,6 @@ describe('AuthService', () => {
   let authRepository: AuthRepository;
   let userRepository: UserRepository;
   let jwtService: JwtService;
-  let emailUtil: EmailUtil;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -45,12 +43,6 @@ describe('AuthService', () => {
           },
         },
         {
-          provide: EmailUtil,
-          useValue: {
-            sendEmailTemplate: jest.fn(),
-          },
-        },
-        {
           provide: ConfigUtil,
           useValue: {
             frontUrl: 'http://localhost:3000',
@@ -64,7 +56,6 @@ describe('AuthService', () => {
     authRepository = module.get<AuthRepository>(AuthRepository);
     userRepository = module.get<UserRepository>(UserRepository);
     jwtService = module.get<JwtService>(JwtService);
-    emailUtil = module.get<EmailUtil>(EmailUtil);
   });
 
   describe('signIn', () => {
@@ -143,12 +134,10 @@ describe('AuthService', () => {
       jest
         .spyOn(authRepository, 'createTokenHistory')
         .mockResolvedValue(undefined);
-      jest.spyOn(emailUtil, 'sendEmailTemplate').mockResolvedValue(undefined);
 
       const result = await authService.resetPassword(resetPasswordDto.email);
 
       expect(result).toBe(true);
-      expect(emailUtil.sendEmailTemplate).toHaveBeenCalled();
     });
 
     it('should throw UserNotExist exception if user does not exist', async () => {
@@ -312,7 +301,6 @@ describe('AuthService', () => {
         .spyOn(userRepository, 'findUserByEmail')
         .mockResolvedValue(user as any);
       jest.spyOn(jwtService, 'signAsync').mockResolvedValue('token123');
-      jest.spyOn(emailUtil, 'sendEmailTemplate').mockResolvedValue(undefined);
       jest.spyOn(userRepository, 'updateUser').mockResolvedValue(user as any);
 
       const result = await authService.sendLoginEmail(

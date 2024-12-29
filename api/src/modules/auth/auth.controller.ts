@@ -11,6 +11,8 @@ import { AuthService } from './auth.service';
 import { Public } from 'src/common/decorators/auth/auth.decorator';
 import { AuthUserDto } from './dto/auth-user.dto';
 import { UserDto } from '../user/dto/user.dto';
+import { SignInDto } from './dto/sign-in.dto';
+import { ValidateTokenDto } from './dto/validate-token.dto';
 
 @Controller('auth')
 export class AuthController {
@@ -19,7 +21,7 @@ export class AuthController {
   @HttpCode(HttpStatus.OK)
   @Public()
   @Post('login')
-  signIn(@Body() signInDto: Record<string, any>) {
+  signIn(@Body() signInDto: SignInDto) {
     return this.authService.signIn(signInDto.email, signInDto.password);
   }
 
@@ -33,7 +35,7 @@ export class AuthController {
   @Post('validate-token')
   @HttpCode(HttpStatus.OK)
   @Public()
-  async validatetoken(@Body() validatetokenDto: Record<string, any>) {
+  async validatetoken(@Body() validatetokenDto: ValidateTokenDto) {
     return this.authService.validateToken(
       validatetokenDto.email,
       validatetokenDto.token,
@@ -79,20 +81,10 @@ export class AuthController {
     );
   }
 
-  @Post('send-login-email')
-  @HttpCode(HttpStatus.OK)
-  @Public()
-  async sendLoginEmail(@Body() sendLogInEmailDto: Record<string, any>) {
-    return this.authService.sendLoginEmail(
-      sendLogInEmailDto.email,
-      sendLogInEmailDto.lang,
-    );
-  }
-
   @Post('login-from-email')
   @HttpCode(HttpStatus.OK)
   @Public()
-  async loginFromEmail(@Body() logInDto: Record<string, any>) {
-    return this.authService.loginFromEmail(logInDto.email, logInDto.tokenEmail);
+  async loginFromEmail(@Body() logInDto: ValidateTokenDto) {
+    return this.authService.loginFromEmail(logInDto.email, logInDto.token);
   }
 }

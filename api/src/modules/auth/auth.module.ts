@@ -5,7 +5,6 @@ import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { UserModule } from '../user/user.module';
 import { JwtModule } from '@nestjs/jwt';
-import { EmailUtil } from '../utils/email.utils';
 import { ConfigUtil } from '../utils/config.utils';
 import { UtilsModule } from '../utils/utils.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -14,7 +13,7 @@ import { AuthRepository } from './auth.repository';
 
 @Module({
   controllers: [AuthController],
-  providers: [AuthService, AuthRepository, EmailUtil, ConfigUtil],
+  providers: [AuthService, AuthRepository, ConfigUtil],
   exports: [AuthService, AuthRepository],
   imports: [
     forwardRef(() => UserModule),

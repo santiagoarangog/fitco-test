@@ -7,7 +7,7 @@ import {
   MinLength,
 } from 'class-validator';
 
-export class AuthUserDto {
+export class SignInDto {
   @ApiProperty({
     description: 'Correo electrónico',
     example: 'usuario@empresa.com',
@@ -27,15 +27,4 @@ export class AuthUserDto {
   @MaxLength(25)
   @IsOptional()
   password: string;
-
-  @ApiProperty({
-    description: 'Confirmar contraseña',
-    example: '*************',
-    type: String,
-  })
-  @IsString()
-  @MinLength(4)
-  @MaxLength(25)
-  @IsOptional()
-  confirmPassword: string;
 }

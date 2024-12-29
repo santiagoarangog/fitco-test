@@ -10,6 +10,7 @@ import { EventRepository } from './event.repository';
 import { CreateEventDto } from './dto/create-event.dto';
 import { UpdateEventDto } from './dto/update-event.dto';
 import { UserDto } from '../user/dto/user.dto';
+import { Events } from './entitys/event.entity';
 
 @Injectable()
 export class EventService {
@@ -55,7 +56,7 @@ export class EventService {
     return this.eventRepository.findById(id);
   }
 
-  async update(id: string, updateUserDto: UpdateEventDto): Promise<any> {
+  async update(id: string, updateUserDto: UpdateEventDto): Promise<Events> {
     try {
       const user = await this.eventRepository.findById(id);
 

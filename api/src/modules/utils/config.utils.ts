@@ -2,7 +2,7 @@
 import { Injectable } from '@nestjs/common';
 import { config } from 'dotenv';
 
-config(); // Carga las variables de entorno
+config();
 
 @Injectable()
 export class ConfigUtil {
@@ -17,15 +17,15 @@ export class ConfigUtil {
   public readonly jwtSecret: string;
 
   constructor() {
-    this.port = this.getNumber('PORT', 80); // Puerto del servidor
-    this.nodeEnv = this.getEnv('NODE_ENV', 'development'); // Entorno de ejecución
-    this.dbHost = this.getEnv('DB_HOST', '127.0.0.1'); // Host de la base de datos
-    this.dbPort = this.getNumber('DB_PORT', 3306); // Puerto de la base de datos
-    this.dbUser = this.getEnv('DB_USER', 'sarango'); // Usuario de la base de datos
-    this.dbPassword = this.getEnv('DB_PASSWORD', '123456'); // Contraseña de la base de datos
-    this.dbName = this.getEnv('DB_NAME', 'fitcotest-db-stg'); // Nombre de la base de datos
-    this.frontUrl = this.getEnv('FRONT_URL', 'http://localhost:3000'); // URL del frontend
-    this.jwtSecret = this.getEnv('KEY', 'PRIVATE_TOKEN_KEY'); // Clave del JWT
+    this.port = this.getNumber('PORT', 80);
+    this.nodeEnv = this.getEnv('NODE_ENV', 'development');
+    this.dbHost = this.getEnv('DB_HOST', '127.0.0.1');
+    this.dbPort = this.getNumber('DB_PORT', 3306);
+    this.dbUser = this.getEnv('DB_USER', 'sarango');
+    this.dbPassword = this.getEnv('DB_PASSWORD', '123456');
+    this.dbName = this.getEnv('DB_NAME', 'fitcotest-db-stg');
+    this.frontUrl = this.getEnv('FRONT_URL', 'http://localhost:3000');
+    this.jwtSecret = this.getEnv('KEY', 'PRIVATE_TOKEN_KEY');
   }
 
   /**

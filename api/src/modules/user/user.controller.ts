@@ -60,11 +60,22 @@ export class UserController {
     return this.userService.findById(id);
   }
 
+  @ApiOperation({ summary: 'Actualiza la información del usuario' })
+  @ApiResponse({
+    status: 200,
+    description: 'Actualiza la información del usuario correctamente',
+  })
+  @ApiResponse({ status: 404, description: 'Usuario no encontrado.' })
   @Put(':id')
   update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.userService.update(id, updateUserDto);
   }
 
+  @ApiOperation({ summary: 'Elimina un usuario en especifico' })
+  @ApiResponse({
+    status: 200,
+    description: 'Usuario eliminado correctamente',
+  })
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.userService.remove(id);

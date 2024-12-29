@@ -14,6 +14,7 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { JwtService } from '@nestjs/jwt';
 import { HashService } from 'src/common/services/hash.service';
+import { User } from './entitys/user.entity';
 
 @Injectable()
 export class UserService {
@@ -83,7 +84,7 @@ export class UserService {
     return this.userRepository.findById(id);
   }
 
-  async update(id: string, updateUserDto: UpdateUserDto): Promise<any> {
+  async update(id: string, updateUserDto: UpdateUserDto): Promise<User> {
     try {
       const user = await this.userRepository.findById(id);
 
@@ -113,59 +114,4 @@ export class UserService {
     }
     return await this.userRepository.deleteUserById(id);
   }
-
-  // async activeUser(id: string | unknown, active: boolean) {
-  //     const existinguserId = id as unknown as Types.ObjectId;
-  //     const user_id = new Types.ObjectId(existinguserId);
-  //     let output: User;
-  //     output = await this.UserModel.findByIdAndUpdate(user_id, {
-  //         isActive: true,
-  //     });
-  //     if (!output) {
-  //         throw new NotFoundException(`User with id ${id} not found`);
-  //     }
-  //     return { result: new ResponseDto(true, undefined, { user: output }) };
-  // }
-
-  // async sendEmailNewUser(
-  //     email: string,
-  //     lang: string,
-  // ): Promise<{ result: ResponseDto<void> }> {
-  //     const user = await this.UserModel.findOne({ email }).exec();
-  //     if (!user) {
-  //         throw new HttpException("UserNotExist", HttpStatus.INTERNAL_SERVER_ERROR);
-  //     }
-
-  //     const payload = {
-  //         name: user.name,
-  //         email: user.email,
-  //         role: user.role,
-  //         id: user.id,
-  //         companyId: user.companyId,
-  //         investType: user.investType,
-  //     };
-  //     const token = await this.jwtService.signAsync(payload);
-  //     await this.TokenHistoryModel.create({ email, token });
-
-  //     const data = {
-  //         date: getDateNowEmail(),
-  //         email: user.email,
-  //         frontUrl:
-  //             this.configUtil.frontUrl +
-  //             `/reset-password?lang=${lang}&tokenEmail=${token}&email=${email}&newUser=true`,
-  //     };
-
-  //     let notification = new SentNotificationDto();
-  //     notification.lang = "es";
-  //     notification.templateName = "newUser";
-  //     notification.email = user.email;
-  //     notification.userId = user.id;
-  //     notification.subject = "Alter5 - New user";
-  //     notification.subjecType = NotificationLogSubject.NEWREGISTERUSER;
-  //     notification.data = data;
-  //     this.notificationLogService.sendEmailNotification(notification);
-
-  //     const result = new ResponseDto<void>(true, "ResetPasswordEmailSendOk");
-  //     return { result };
-  // }
 }

@@ -1,9 +1,6 @@
 import { Injectable, HttpException, HttpStatus, Logger } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
-import { EmailUtil } from '../utils/email.utils';
-import * as handlebars from 'handlebars';
-import * as fs from 'fs';
 import { ConfigUtil } from '../utils/config.utils';
 import { generateGuid, getDateNowEmail } from 'src/common/utils/utils';
 import { User } from '../user/entitys/user.entity';
@@ -19,7 +16,6 @@ export class AuthService {
     private readonly authRepository: AuthRepository,
     private readonly userRepository: UserRepository,
     private readonly jwtService: JwtService,
-    private readonly emailUtil: EmailUtil,
     private readonly configUtil: ConfigUtil,
   ) {}
 
@@ -67,18 +63,8 @@ export class AuthService {
       email: user.email,
       frontUrl: `${this.configUtil.frontUrl}/reset-password?tokenEmail=${token}&email=${email}`,
     };
-    console.log(data);
 
-    console.log(data.frontUrl);
-
-    const templatePath = `${this.configUtil.nodeEnv == 'production' ? 'dist/' : 'src/'}modules/utils/emails/es/resetPassword.hbs`;
-    const source = fs.readFileSync(templatePath, 'utf-8');
-    const compiledTemplate = handlebars.compile(source);
-    const html = compiledTemplate(data);
-
-    this.emailUtil.sendEmailTemplate(user.email, 'Reset Password', html);
-
-    return 'ResetPasswordEmailSendOk';
+    return `ResetPasswordEmailSendOk ${data}`;
   }
 
   async validateToken(email: string, token: string) {
@@ -167,16 +153,9 @@ export class AuthService {
       frontUrl: `${this.configUtil.frontUrl}/loading-sesion?lang=${lang}&tokenEmail=${token}&email=${email}`,
     };
 
-    const templatePath = `${this.configUtil.nodeEnv == 'production' ? 'dist/' : 'src/'}modules/utils/emails/${lang}/logInEmail.hbs`;
-    const source = fs.readFileSync(templatePath, 'utf-8');
-    const compiledTemplate = handlebars.compile(source);
-    const html = compiledTemplate(data);
-
-    this.emailUtil.sendEmailTemplate(user.email, 'Sign in to Alter5', html);
-
     user.tokenEmail = token;
     await this.userRepository.updateUser(user);
 
-    return 'LogInEmailSendOk';
+    return `LogInEmailSendOk ${data} ${user.tokenEmail}`;
   }
 }
