@@ -2,9 +2,9 @@
   <a href="https://www.fitcolatam.com/" target="blank"><img src="https://raw.githubusercontent.com/santiagoarangog/fitco-test/refs/heads/main/src/assets/images/fitco-logo.png" width="400" alt="FitCo Test Logo" /></a> 
 </p>
 
-# FitCo Test &bull; WEB
+# FitCo Test &bull; API
 
-Welcome to the **WEB project** of the FitCo Test.
+Welcome to the **API project** of the FitCo Test.
 
 This project encompasses all aspects related to services provided by FitCo Test.
 
