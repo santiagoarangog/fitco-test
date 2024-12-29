@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://www.fitcolatam.com/" target="blank"><img src="https://play.google.com/store/apps/details?id=com.ionicframework.fitcoapp644044&hl=es_MX" width="400" alt="FitCo Test Logo" />FitCo Test &bull; WEB</a> 
+  <a href="https://www.fitcolatam.com/" target="blank"><img src="https://raw.githubusercontent.com/santiagoarangog/fitco-test/refs/heads/main/src/assets/images/fitco-logo.png" width="400" alt="FitCo Test Logo" />FitCo Test &bull; WEB</a> 
 </p>
 
 # FitCo Test &bull; WEB
