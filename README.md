@@ -15,7 +15,7 @@ To run the project locally, follow these steps:
 1. **Clone the Repository:**
 
 ```sh
-git clone https://github.com/
+git clone https://github.com/santiagoarangog/fitco-test.git
 ```
 
 2. **Install Dependencies:**
