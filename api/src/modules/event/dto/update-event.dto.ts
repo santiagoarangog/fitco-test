@@ -1,5 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsString, IsBoolean } from 'class-validator';
+import { IsString, IsBoolean, IsOptional } from 'class-validator';
+import { TypeEvent } from './../../../common/enums/type-event.enum';
 
 export class UpdateEventDto {
   @ApiProperty({

@@ -6,11 +6,11 @@ import {
   Logger,
   NotFoundException,
 } from '@nestjs/common';
-import { EventRepository } from '../../src/modules/event/event.repository';
-import { CreateEventDto } from '../../src/modules/event/dto/create-event.dto';
-import { UpdateEventDto } from '../../src/modules/event/dto/update-event.dto';
-import { UserDto } from '../../src/modules/user/dto/user.dto';
-import { Events } from '../../src/modules/event/entitys/event.entity';
+import { EventRepository } from './event.repository';
+import { CreateEventDto } from './dto/create-event.dto';
+import { UpdateEventDto } from './dto/update-event.dto';
+import { UserDto } from '../user/dto/user.dto';
+import { Events } from './entitys/event.entity';
 
 @Injectable()
 export class EventService {
