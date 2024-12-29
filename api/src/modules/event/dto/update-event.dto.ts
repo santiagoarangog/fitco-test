@@ -27,6 +27,15 @@ export class UpdateEventDto {
   location: string;
 
   @ApiProperty({
+    description: 'Tipo de evento',
+    example: 'CARDIO',
+    type: Array,
+  })
+  @IsOptional()
+  @IsString()
+  type: TypeEvent;
+
+  @ApiProperty({
     description: 'Indica si el evento esta activo',
     example: true,
     type: String,
