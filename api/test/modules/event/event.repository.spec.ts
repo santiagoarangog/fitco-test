@@ -1,10 +1,10 @@
-import { Events } from './../../src/modules/event/entitys/event.entity';
-import { EventRepository } from './../../src/modules/event/event.repository';
-import { TypeEvent } from './../../src/common/enums/type-event.enum';
+import { Events } from '../../../src/modules/event/entitys/event.entity';
+import { EventRepository } from '../../../src/modules/event/event.repository';
+import { TypeEvent } from '../../../src/common/enums/type-event.enum';
 import { Test, TestingModule } from '@nestjs/testing';
-import { TokenHistory } from '../../src/modules/auth/entitys/token-history.entity';
-import { CreateEventDto } from '../../src/modules/event/dto/create-event.dto';
-import { UpdateEventDto } from '../../src/modules/event/dto/update-event.dto';
+import { TokenHistory } from '../../../src/modules/auth/entitys/token-history.entity';
+import { CreateEventDto } from '../../../src/modules/event/dto/create-event.dto';
+import { UpdateEventDto } from '../../../src/modules/event/dto/update-event.dto';
 import { Repository } from 'typeorm';
 import { getRepositoryToken } from '@nestjs/typeorm';
 

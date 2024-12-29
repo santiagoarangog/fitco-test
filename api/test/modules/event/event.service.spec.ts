@@ -1,11 +1,11 @@
-import { TypeEvent } from './../../src/common/enums/type-event.enum';
+import { TypeEvent } from '../../../src/common/enums/type-event.enum';
 import { Test, TestingModule } from '@nestjs/testing';
-import { EventService } from './../../src/modules/event/event.service';
-import { EventRepository } from './../../src/modules/event/event.repository';
-import { CreateEventDto } from './../../src/modules/event/dto/create-event.dto';
-import { UpdateEventDto } from './../../src/modules/event/dto/update-event.dto';
+import { EventService } from '../../../src/modules/event/event.service';
+import { EventRepository } from '../../../src/modules/event/event.repository';
+import { CreateEventDto } from '../../../src/modules/event/dto/create-event.dto';
+import { UpdateEventDto } from '../../../src/modules/event/dto/update-event.dto';
 import { BadRequestException, HttpException, NotFoundException } from '@nestjs/common';
-import { Events } from './../../src/modules/event/entitys/event.entity';
+import { Events } from '../../../src/modules/event/entitys/event.entity';
 import { Logger } from '@nestjs/common';
 
 describe('EventService', () => {

@@ -1,9 +1,9 @@
-import { Role } from './../../src/common/enums/role.enum';
+import { Role } from '../../../src/common/enums/role.enum';
 import { Test, TestingModule } from '@nestjs/testing';
-import { UserController } from '../../src/modules/user/user.controller';
-import { UserService } from '../../src/modules/user/user.service';
-import { CreateUserDto } from '../../src/modules/user/dto/create-user.dto';
-import { UpdateUserDto } from '../../src/modules/user/dto/update-user.dto';
+import { UserController } from '../../../src/modules/user/user.controller';
+import { UserService } from '../../../src/modules/user/user.service';
+import { CreateUserDto } from '../../../src/modules/user/dto/create-user.dto';
+import { UpdateUserDto } from '../../../src/modules/user/dto/update-user.dto';
 import { NotFoundException } from '@nestjs/common';
 import { RequestDto } from 'src/common/dto/request.dto';
 

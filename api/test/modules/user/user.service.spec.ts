@@ -1,8 +1,8 @@
-import { Role } from './../../src/common/enums/role.enum';
+import { Role } from '../../../src/common/enums/role.enum';
 import { Test, TestingModule } from '@nestjs/testing';
-import { UserService } from '../../src/modules/user/user.service';
-import { UserRepository } from '../../src/modules/user/user.repository';
-import { AuthRepository } from '../../src/modules/auth/auth.repository';
+import { UserService } from '../../../src/modules/user/user.service';
+import { UserRepository } from '../../../src/modules/user/user.repository';
+import { AuthRepository } from '../../../src/modules/auth/auth.repository';
 import { HashService } from 'src/common/services/hash.service';
 import { JwtService } from '@nestjs/jwt';
 import {
@@ -10,9 +10,9 @@ import {
   HttpException,
   NotFoundException,
 } from '@nestjs/common';
-import { CreateUserDto } from '../../src/modules/user/dto/create-user.dto';
-import { UpdateUserDto } from '../../src/modules/user/dto/update-user.dto';
-import { User } from '../../src/modules/user/entitys/user.entity';
+import { CreateUserDto } from '../../../src/modules/user/dto/create-user.dto';
+import { UpdateUserDto } from '../../../src/modules/user/dto/update-user.dto';
+import { User } from '../../../src/modules/user/entitys/user.entity';
 
 describe('UserService', () => {
   let userService: UserService;

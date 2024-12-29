@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AuthRepository } from '../../src/modules/auth/auth.repository';
-import { TokenHistory } from '../../src/modules/auth/entitys/token-history.entity';
+import { AuthRepository } from '../../../src/modules/auth/auth.repository';
+import { TokenHistory } from '../../../src/modules/auth/entitys/token-history.entity';
 import { Repository } from 'typeorm';
 import { getRepositoryToken } from '@nestjs/typeorm';
 

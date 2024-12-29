@@ -1,9 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AuthService } from '../../src/modules/auth/auth.service';
-import { AuthRepository } from '../../src/modules/auth/auth.repository';
-import { UserRepository } from '../../src/modules/user/user.repository';
-import { ConfigUtil } from '../../src/modules/utils/config.utils';
-import { User } from '../../src/modules/user/entitys/user.entity';
+import { AuthService } from '../../../src/modules/auth/auth.service';
+import { AuthRepository } from '../../../src/modules/auth/auth.repository';
+import { UserRepository } from '../../../src/modules/user/user.repository';
+import { ConfigUtil } from '../../../src/modules/utils/config.utils';
+import { User } from '../../../src/modules/user/entitys/user.entity';
 import { JwtService } from '@nestjs/jwt';
 import { HttpException, HttpStatus } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';

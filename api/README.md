@@ -49,6 +49,78 @@ npm run start
 ```
 With this, we will validate that everything is working correctly.
 
+
+## Test Coverage
+
+To assess test coverage:
+
+1. **Install LCOV:**
+```bash
+brew install lcov
+```
+
+2. **Generate Coverage Data:**
+```bash
+flutter test --coverage
+```
+
+3. **Generate HTML Reports:**
+```bash
+genhtml coverage/lcov.info -o coverage/html
+```
+
+4. **View Coverage Reports:**
+```bash
+open coverage/html/index.html
+```
+
+---
+
+## Running the API and Web Application Locally
+
+This guide provides steps to build and serve the Api and web application locally with `http-server`.
+
+### 1. **Build the Application for Web**
+
+```bash
+npm run build
+```
+
+### 2. **Install `http-server` (If Not Already Installed)**
+
+Install `http-server` globally with `npm`:
+```bash
+npm install -g http-server
+```
+
+### 3. **Serve the Build Directory Using `http-server`**
+
+Change to `build/web` and start `http-server`:
+```bash
+cd api/build
+http-server -p 80 -a localhost
+```
+
+```bash
+cd build
+http-server -p 3000 -a localhost
+```
+
+### 4. **Access the Application in Your Browser**
+
+Open:
+```
+http://localhost:80
+```
+
+&
+
+```
+http://localhost:3000
+```
+
+---
+
 ## Build
 To generate the distributed version, execute the following command:
 

@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AuthController } from '../../src/modules/auth/auth.controller';
-import { AuthService } from '../../src/modules/auth/auth.service';
-import { SignInDto } from '../../src/modules/auth/dto/sign-in.dto';
+import { AuthController } from '../../../src/modules/auth/auth.controller';
+import { AuthService } from '../../../src/modules/auth/auth.service';
+import { SignInDto } from '../../../src/modules/auth/dto/sign-in.dto';
 import { HttpException, HttpStatus } from '@nestjs/common';
 
 const authServiceMock = {

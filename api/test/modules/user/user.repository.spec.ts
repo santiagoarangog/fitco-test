@@ -1,11 +1,11 @@
-import { Role } from './../../src/common/enums/role.enum';
+import { Role } from '../../../src/common/enums/role.enum';
 import { Test, TestingModule } from '@nestjs/testing';
-import { UserRepository } from '../../src/modules/user/user.repository';
+import { UserRepository } from '../../../src/modules/user/user.repository';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import { User } from '../../src/modules/user/entitys/user.entity';
+import { User } from '../../../src/modules/user/entitys/user.entity';
 import { Repository } from 'typeorm';
-import { CreateUserDto } from '../../src/modules/user/dto/create-user.dto';
-import { UpdateUserDto } from '../../src/modules/user/dto/update-user.dto';
+import { CreateUserDto } from '../../../src/modules/user/dto/create-user.dto';
+import { UpdateUserDto } from '../../../src/modules/user/dto/update-user.dto';
 
 describe('UserRepository', () => {
   let userRepository: UserRepository;

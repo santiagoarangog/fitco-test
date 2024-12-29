@@ -1,14 +1,14 @@
 import {
   Req,
 } from '@nestjs/common';
-import { Role } from './../../src/common/enums/role.enum';
-import { TypeEvent } from './../../src/common/enums/type-event.enum';
+import { Role } from '../../../src/common/enums/role.enum';
+import { TypeEvent } from '../../../src/common/enums/type-event.enum';
 import { Test, TestingModule } from '@nestjs/testing';
-import { EventController } from './../../src/modules/event/event.controller';
-import { EventService } from './../../src/modules/event/event.service';
-import { CreateEventDto } from './../../src/modules/event/dto/create-event.dto';
-import { UpdateEventDto } from './../../src/modules/event/dto/update-event.dto';
-import { UserDto } from './../../src/modules/user/dto/user.dto';
+import { EventController } from '../../../src/modules/event/event.controller';
+import { EventService } from '../../../src/modules/event/event.service';
+import { CreateEventDto } from '../../../src/modules/event/dto/create-event.dto';
+import { UpdateEventDto } from '../../../src/modules/event/dto/update-event.dto';
+import { UserDto } from '../../../src/modules/user/dto/user.dto';
 
 describe('EventController', () => {
   let controller: EventController;
