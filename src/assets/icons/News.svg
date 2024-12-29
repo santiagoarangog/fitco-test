@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+  <g id="News">
+    <rect id="Rectangle_268" data-name="Rectangle 268" width="28" height="28" fill="#fff" opacity="0"/>
+    <path id="Path_526" data-name="Path 526" d="M14.25,17.75v-14H3.75V16.875a.875.875,0,0,0,.875.875Zm2.625,1.75H4.625A2.625,2.625,0,0,1,2,16.875v-14A.875.875,0,0,1,2.875,2h12.25A.875.875,0,0,1,16,2.875V9h3.5v7.875A2.625,2.625,0,0,1,16.875,19.5ZM16,10.75v6.125a.875.875,0,0,0,1.75,0V10.75ZM5.5,5.5h5.25v5.25H5.5ZM7.25,7.25V9H9V7.25ZM5.5,11.625h7v1.75h-7Zm0,2.625h7V16h-7Z" transform="translate(3.25 3.25)" fill="#fff"/>
+  </g>
+</svg>

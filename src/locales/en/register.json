@@ -1,0 +1,22 @@
+{
+  "register": "Register",
+  "bePart": "Join a digital investment platform for ",
+  "renewableEnergy": "Renewable Energy projects",
+  "name": "Name",
+  "phone": "Phone number",
+  "email": "Email",
+  "password": "Password",
+  "repeatPassword": "Repeat password",
+  "forgot": "Forgot my password",
+  "signUp": "Sign Up",
+  "account": "Already have an account?",
+  "login": "Log In",
+  "poweredBy": "Powered by FitCo Latam • Santiago Arango © 2024. All rights reserved.",
+  "successSignUp": "You have successfully signed up",
+  "modalText": "You now have full access to all the platform's features. For any questions or assistance, please contact our support team.",
+  "buttonModal": "Log in to the platform",
+  "required": "Required",
+  "invalidEmail": "Please provide a valid email address.",
+  "invalidPassword": "You must enter a minimum of 4 and a maximum of 25 characters",
+  "equalPassword": "The passwords must match."
+}

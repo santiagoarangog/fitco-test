@@ -1,0 +1,22 @@
+{
+  "register": "Regístrate",
+  "bePart": "Sé parte de una plataforma de inversión digital de proyectos de",
+  "renewableEnergy": "Energía Renovable",
+  "name": "Nombre completo",
+  "phone": "Número de telefono",
+  "email": "Correo electrónico",
+  "password": "Contraseña",
+  "repeatPassword": "Repetir contraseña",
+  "forgot": "Olvidé mi contraseña",
+  "signUp": "Registrarme",
+  "account": "¿Ya tienes cuenta?",
+  "login": "Inicia sesión aquí",
+  "poweredBy": "Powered by FitCo Latam • Santiago Arango © 2024. All rights reserved.",
+  "successSignUp": "Registro exitoso",
+  "modalText": "A partir de ahora, podrás acceder a todas las funcionalidades de la plataforma. Si tienes alguna pregunta o necesitas asistencia, no dudes en ponerte en contacto con nuestro equipo de soporte.",
+  "buttonModal": "Ingresar a la plataforma",
+  "required": "Campo requerido",
+  "invalidEmail": "Debe ser un email valido",
+  "invalidPassword": "Debe ingresar un mínimo de 4 y un máximo de 25 caracteres",
+  "equalPassword": "Las contraseñas deben ser iguales"
+}
