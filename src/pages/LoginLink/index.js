@@ -8,7 +8,7 @@ import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { validateEmailRequired } from "../../utilities/validations";
 import { PageWrapper } from "./styles";
-import logo from "../../assets/images/alter-logo-blue.svg";
+import logo from "../../assets/images/fitco-logo.png";
 import { useTranslation } from "react-i18next";
 import { SelectLanguage } from "../../components/SelectLanguage";
 import useSendEmail from "./hooks/useSendEmail";

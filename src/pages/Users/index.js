@@ -8,7 +8,6 @@ import useGetUsers from "./hooks/useGetUsers";
 import { theme } from "../../styles/theme";
 import { DeleteIcon } from "../../assets/icons";
 import { Pending } from "./components/pending";
-import { Companies } from "./components/companies";
 
 export const Users = () => {
   const { t } = useTranslation(["users", "common"]);
@@ -77,16 +76,6 @@ export const Users = () => {
       tab: t("investor"),
       children: <Investor />,
     },
-    // {
-    //   key: "4",
-    //   tab: t("provider"),
-    //   children: "",
-    // },
-    // {
-    //   key: "5",
-    //   tab: t("adviser"),
-    //   children: "",
-    // },
     {
       key: "6",
       tab: t("pending"),
@@ -97,11 +86,6 @@ export const Users = () => {
           totalItems={totalItems}
         />
       ),
-    },
-    {
-      key: "7",
-      tab: t("companies"),
-      children: <Companies />,
     },
   ];
 

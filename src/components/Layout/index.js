@@ -82,15 +82,6 @@ export const Layout = ({ children }) => {
   };
 
   const externalUrlTitles =
-    pathname.includes("/projects/documents") ||
-    pathname.includes("/projects/info-plants") ||
-    pathname.includes("/projects/edit-plant") ||
-    pathname.includes("/projects/information-declaration") ||
-    pathname.includes("/projects/teaser-documentation") ||
-    pathname.includes("/strategies/source/") ||
-    pathname.includes("/projects/deal-intel") ||
-    pathname.includes("/projects/see-invitations") ||
-    pathname.includes("/projects/financial-model") ||
     pathname.includes("/projects/edit-project");
 
   const getTitleAndSubtitle = () => {
@@ -98,17 +89,9 @@ export const Layout = ({ children }) => {
     let subtitle;
 
     switch (true) {
-      case pathname.includes("/projects/documents"):
-        title = projectName;
-        subtitle = t("documentsMessage");
-        break;
-      case pathname.includes("/projects/info-plants"):
-        title = plantName;
-        subtitle = `${t("project")}: ${projectName}`;
-        break;
       case pathname.includes("/projects/edit-plant"):
         title = plantName;
-        subtitle = `${t("project")}: ${projectName}`;
+        subtitle = `${"Eventos"}: ${projectName}`;
         break;
       case pathname.includes("/projects/information-declaration"):
         title = projectName;
