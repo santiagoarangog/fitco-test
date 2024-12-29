@@ -6,7 +6,7 @@
   },
   "modalLoad": {
     "title": "Cargar tus proyectos",
-    "description": "Ingresa el nombre de tu compañia para solicitar a Alter5 la carga de los proyectos de tu empresa.",
+    "description": "Ingresa el nombre de tu compañia para solicitar a FitCo la carga de los proyectos de tu empresa.",
     "loadProjectText": "Solicitar carga de proyectos",
     "cancel": "Cancelar"
   },
