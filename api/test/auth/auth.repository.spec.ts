@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AuthRepository } from './auth.repository';
-import { TokenHistory } from './entitys/token-history.entity';
+import { AuthRepository } from '../../src/modules/auth/auth.repository';
+import { TokenHistory } from '../../src/modules/auth/entitys/token-history.entity';
 import { Repository } from 'typeorm';
 import { getRepositoryToken } from '@nestjs/typeorm';
 
@@ -86,8 +86,8 @@ describe('AuthRepository', () => {
         });
     });
 
-    describe('deactivateToken', () => {
-        it('should deactivate a token', async () => {
+    describe('desactivateToken', () => {
+        it('should desactivate a token', async () => {
             const tokenHistory = new TokenHistory();
             tokenHistory.email = 'test@example.com';
             tokenHistory.token = 'sample-token';
@@ -95,7 +95,7 @@ describe('AuthRepository', () => {
 
             mockTokenHistoryRepository.save.mockResolvedValue(tokenHistory);
 
-            await repository.deactivateToken(tokenHistory);
+            await repository.desactivateToken(tokenHistory);
 
             expect(tokenHistory.isActive).toBe(false);
             expect(mockTokenHistoryRepository.save).toHaveBeenCalledWith(tokenHistory);

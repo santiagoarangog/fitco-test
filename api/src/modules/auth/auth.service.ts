@@ -75,7 +75,7 @@ export class AuthService {
     }
 
     const user = await this.userRepository.findUserByEmail(email);
-    await this.authRepository.deactivateToken(activeToken);
+    await this.authRepository.desactivateToken(activeToken);
 
     const newToken = await this.generateToken(user);
     await this.userRepository.activeUser(user.uuid, true);

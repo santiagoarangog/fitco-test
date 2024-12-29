@@ -31,46 +31,7 @@ export class AuthController {
   async resetPassword(@Body() resetPasswordDto: AuthUserDto) {
     return this.authService.resetPassword(resetPasswordDto.email);
   }
-
-  @Post('validate-token')
-  @HttpCode(HttpStatus.OK)
-  @Public()
-  async validatetoken(@Body() validatetokenDto: ValidateTokenDto) {
-    return this.authService.validateToken(
-      validatetokenDto.email,
-      validatetokenDto.token,
-    );
-  }
-
-  @Public()
-  @Post('refresh-token')
-  async refreshToken(
-    @Body('refreshToken') refreshToken: string,
-    @Req() req: Request & { user: UserDto },
-  ) {
-    if (!refreshToken) {
-      throw new HttpException(
-        'Refresh token is required',
-        HttpStatus.BAD_REQUEST,
-      );
-    }
-
-    try {
-      const newTokens = await this.authService.refreshToken(
-        refreshToken,
-        req.user,
-      );
-
-      return newTokens;
-    } catch (error) {
-      console.log(error);
-      throw new HttpException(
-        'Invalid or expired token',
-        HttpStatus.UNAUTHORIZED,
-      );
-    }
-  }
-
+  
   @Post('change-password')
   @HttpCode(HttpStatus.OK)
   async changePassword(@Body() changePasswordDto: AuthUserDto) {

@@ -27,7 +27,7 @@ export class AuthRepository {
     });
   }
 
-  async deactivateToken(token: TokenHistory): Promise<void> {
+  async desactivateToken(token: TokenHistory): Promise<void> {
     token.isActive = false;
     await this.tokenHistoryRepository.save(token);
   }
