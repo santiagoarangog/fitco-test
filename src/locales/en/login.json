@@ -1,0 +1,25 @@
+{
+  "login": "Login",
+  "email": "Email",
+  "password": "Password",
+  "forgot": "Forgot password",
+  "getInto": "Access",
+  "or": "or",
+  "loginLink": "Log in using a link received in the email",
+  "notAccount": "Don't have an account? you can",
+  "register": "register here",
+  "yourProject": "Your project of",
+  "renewableEnergy": "Renewable Energy",
+  "broughtToLife": "brought to life",
+  "platform": "A tailor-made digital investment platform designed for cutting-edge technologies",
+  "poweredBy": "Powered by FitCo Latam • Santiago Arango © 2024. All rights reserved.",
+  "loginLinkTitle": "Sign in with a link",
+  "loginLinkMessage": "Tell us your email and we will send you a link to log in",
+  "sendLink": "Send link",
+  "loadingLogin": "Logging in...",
+  "sendSuccess": "We have sent the login link to your email.",
+  "verifyAccount": "Account verification",
+
+  "invalidEmail": "Invalid Email",
+  "invalidPassword": "You must enter a minimum of 4 and a maximum of 25 characters"
+}
