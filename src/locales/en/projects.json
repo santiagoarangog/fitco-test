@@ -1,0 +1,119 @@
+{
+  "empty": {
+    "loadProjectText": "Load company projects",
+    "upProjectText": "Upload new project",
+    "emptyText": "They don't have any projects yet"
+  },
+  "modalLoad": {
+    "title": "Load Your Projects",
+    "description": "Enter the name of your company to request Alter5 to upload your company's projects.",
+    "loadProjectText": "Request project upload",
+    "cancel": "Cancel"
+  },
+  "modalUpload": {
+    "title": "What is the objective?",
+    "comingSoon": "Coming Soon",
+    "financing": "Financing",
+    "sale": "Sale",
+    "indicate": "Indicate the type of project",
+    "projectType": "What is the type of {{value}}?",
+    "solar": "Solar",
+    "eolic": "Eolic",
+    "selfConsum": "Self-consum",
+    "type": {
+      "constructionFinancing": "Construction Financing",
+      "operationalRefinancing": "Operational Refinancing",
+      "preRtBCOD": "Pre RtB/COD",
+      "InOperation": "In Operation"
+    }
+  },
+  "modalValidationLoadProjects": {
+    "title": "We're validating...",
+    "description": "We are validating the information. Your projects will load shortly and you will receive a confirmation email.",
+    "btnCreateProject": "Create a new project",
+    "backHome": "Back to home"
+  },
+  "filter": {
+    "title": "Filter your projects",
+    "type": "Type:",
+    "instance": "Instance:",
+    "save": "Save filters",
+    "clean": "Clear filters",
+    "solar": "Solar",
+    "eolic": "Eolic",
+    "sale": "Sale",
+    "financing": "Financing"
+  },
+  "toast": {
+    "validatePlants": "There are investors interested in learning more information about the project {{projectName}}. Please complete this additional information so they can confirm their interest. The process is confidential."
+  },
+
+  "drawerDocumentation": {
+    "documentation": "Documentation",
+    "edit": "Edit",
+    "send": "Send",
+    "years": "Years",
+    "close": "Close",
+    "load": "Load Termsheet"
+  },
+
+  "modalDistribution": {
+    "select": "Select the strategy",
+    "do": "What do you want to do?",
+    "invite": "Invite investors",
+    "see": "See investors",
+    "close": "Close transaction",
+    "noStrategy": "There is no strategy"
+  },
+
+  "drawerInvitationInvestor": {
+    "invite": "Invite investors",
+    "list": "The following list of companies has been pre-selected according to the parameters established by the investors.",
+    "strategy": "Strategy:",
+    "companies": "Companies",
+    "other": "Other investors",
+    "otherInvestors": "You can also invite other investors from the platform.",
+    "search": "To search for an investor...",
+    "send": "Send invitation",
+    "unregistered": "Invite unregistered investors",
+    "cancel": "Cancel"
+  },
+
+  "drawerA5Modeling": {
+    "title": "A-5 Modeling",
+    "financingSource": "Financing Source",
+    "editSource": "Edit funding source",
+    "financingModel": "Financial Model",
+    "createFinancingModel": "Create Financial Model",
+    "generateFinancingModel": "Generate Financial Model",
+    "downloadFinancingModel": "Download Financial Model",
+    "showPromoterPanel": "Show in promoter panel",
+    "close": "Close",
+    "selectSource": "Select source",
+    "saveSuccess": "Source saved successfully",
+    "saveFailed": "An error occurred, try again later",
+    "documentSuccess": "Model loaded successfully",
+    "notPermited": "File not allowed",
+    "generateSuccess": "Model generated successfully"
+  },
+  "modalDiscardProject": {
+    "price": "Price",
+    "size": "Size",
+    "date": "Rtf or CoD Date",
+    "information": "Lack of information",
+    "otherInfo": "What other information can we provide you to help you analyze the investment?",
+    "others": "Others",
+    "discardReason": "If you indicate the reasons for discarding, we will take them into account when showing you future opportunities",
+    "saleEnery": "Energy sales scheme",
+    "creditMargin": "Credit margin",
+    "statusProject": "Project progress status",
+    "field": "Required field",
+    "discardSuccess": "Successfully discarded",
+    "discardReasonProject": "Why do you want to discard the project",
+    "alter": "At Alter 5, we want to present you with only opportunities that",
+    "investor": "match your investment criteria",
+    "selectOneOption": "You must select at least one field",
+    "send": "Send response",
+    "cancel": "Cancel"
+  }
+}
