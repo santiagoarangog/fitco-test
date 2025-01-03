@@ -16,6 +16,11 @@ import { JwtService } from '@nestjs/jwt';
 import { HashService } from 'src/common/services/hash.service';
 import { User } from './entitys/user.entity';
 
+/**
+ * Servicio del usuario
+ * @class UserService
+ * @description Maneja todas las operaciones relacionadas con los usuarios del sistema
+ */
 @Injectable()
 export class UserService {
   private readonly logger = new Logger('UserService');
@@ -28,7 +33,14 @@ export class UserService {
     private readonly jwtService: JwtService,
   ) {}
 
-  async createUser(createUserDto: CreateUserDto) {
+  /**
+   * Crear un nuevo usuario
+   * @param {CreateUserDto} createUserDto - Información del usuario
+   * @returns {Promise<User>} Información de los usuarios
+   * @throws {NotFoundException} Indica el error al crear el usuario
+   * @throws {DatabaseException} Error de conexión DB
+   */
+  async createUser(createUserDto: CreateUserDto): Promise<User> {
     try {
       if (createUserDto.password !== createUserDto.confirmPassword) {
         throw new BadRequestException('Las contraseñas no coinciden');
@@ -76,14 +88,38 @@ export class UserService {
     }
   }
 
-  async findAll(limit: number, offset: number) {
+  /**
+   * Listado de usuarios
+   * @param {number} limit - Indica la cantidad de usuarios a mostrar
+   * @param {number} offset - Indica la cantidad de usuarios a saltar
+   * @returns {Promise<{items: Events[]; total: number}>} Información de los usuarios
+   * @throws {NotFoundException} Error al listar los usuarios
+   * @throws {DatabaseException} Error de conexión DB
+   */
+  async findAll(limit: number, offset: number): Promise<{ items: User[]; total: number; }> {
     return await this.userRepository.findAll(limit, offset);
   }
 
-  async findById(id: string) {
+  /**
+   * Retorna un usuario por su ID
+   * @param {number} id - Indica la cantidad de usuarios a mostrar
+   * @returns {Promise<User>} Información de los usuarios
+   * @throws {NotFoundException} Error al crear el usuario
+   * @throws {DatabaseException} Error de conexión DB
+   */
+  async findById(id: string): Promise<User> {
     return this.userRepository.findById(id);
   }
 
+  /**
+   * Actualiza la información del usuario
+   * @param {number} id - ID de un usuario en particular
+   * @param {UpdateUserDto} updateUserDto - Información del usuario
+   * @returns {Promise<User>} Información de los usuarios
+   * @throws {NotFoundException} User with id ${id} not found
+   * @throws {NotFoundException} InvalidUserError
+   * @throws {DatabaseException} Error de conexión DB
+   */
   async update(id: string, updateUserDto: UpdateUserDto): Promise<User> {
     try {
       const user = await this.userRepository.findById(id);
@@ -104,7 +140,15 @@ export class UserService {
     }
   }
 
-  async remove(id: string) {
+  /**
+   * Eliminación de un usuario
+   * @param {number} id - ID de un usuario en particular
+   * @returns {Promise<void>} Retorna el usuario eliminado
+   * @throws {NotFoundException} User with id ${id} not found
+   * @throws {NotFoundException} El ID ingresado es incorrecto
+   * @throws {DatabaseException} Error de conexión DB
+   */
+  async remove(id: string): Promise<void> {
     const existingUser = await this.userRepository.findById(id);
     if (existingUser) {
       throw new HttpException(
